@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Internship Program</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1 class="logo">Remote Internship Program</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Apply</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Join Our Remote Internship Program!</h2>
+            <p>Learn by working on real projects.</p>
+            <a href="#" class="btn">Apply Now</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h3>About the Program</h3>
+            <p>Our remote internship offers the flexibility to work from anywhere while gaining real-world experience. You'll collaborate with professionals and build skills that matter.</p>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h3>Why Join?</h3>
+            <ul>
+                <li>✅ Flexible Hours</li>
+                <li>✅ Real Projects</li>
+                <li>✅ Certificate</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Contact: hightech.sba@gmail.com</p>
+            <p>&copy; 2025 Remote Internship Program. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+/* Google Font */ body { margin: 0; font-family: 'Inter', sans-serif; line-height: 1.6; background-color: #f4f4f4; color: #333; } /* Layout */ .container { width: 90%; max-width: 1100px; margin: auto; } /* Header */ header { background: #222; color: #fff;
+padding: 1rem 0; } header .container { display: flex; justify-content: space-between; align-items: center; } .logo { font-size: 1.5rem; font-weight: 600; } nav ul { list-style: none; display: flex; gap: 1.5rem; } nav a { color: #fff; text-decoration:
+none; font-weight: 500; } nav a:hover { text-decoration: underline; } /* Hero Section */ .hero { background: #007bff; color: #fff; text-align: center; padding: 4rem 1rem; } .hero h2 { font-size: 2.2rem; margin-bottom: 1rem; } .hero .btn { display: inline-block;
+background: #fff; color: #007bff; padding: 0.75rem 1.5rem; border-radius: 5px; font-weight: 600; text-decoration: none; margin-top: 1rem; transition: background 0.3s; } .hero .btn:hover { background: #e0e0e0; } /* About Section */ .about { background:
+#fff; padding: 2rem 1rem; text-align: center; } .about h3 { font-size: 1.8rem; margin-bottom: 1rem; } /* Benefits Section */ .benefits { background: #f0f0f0; padding: 2rem 1rem; text-align: center; } .benefits h3 { font-size: 1.8rem; margin-bottom: 1rem;
+} .benefits ul { list-style: none; padding: 0; } .benefits li { margin: 0.5rem 0; font-weight: 500; } /* Footer */ footer { background: #222; color: #ccc; text-align: center; padding: 1rem 0; font-size: 0.9rem; } /* Responsive */ @media (max-width: 768px)
+{ nav ul { flex-direction: column; gap: 0.5rem; } .hero h2 { font-size: 1.5rem; } .hero .btn { width: 100%; } }
