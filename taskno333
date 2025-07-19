@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Contact</h1>
+
+        <form id="contactForm" novalidate>
+            <div class="form-group">
+                <label for="fullName">FullName<span>*</span></label>
+                <input type="text" id="fullName" name="fullName" required />
+                <small class="error" id="nameError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address<span>*</span></label>
+                <input type="email" id="email" name="email" required />
+                <small class="error" id="emailError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message<span>*</span></label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <small class="error" id="messageError"></small>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <p id="successMessage" class="success"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+/* Google Font */ body { margin: 0; font-family: 'Inter', sans-serif; background-color: #f9f9f9; color: #333; } .container { max-width: 600px; margin: 50px auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} h1 { text-align: center; margin-bottom: 1.5rem; } .form-group { margin-bottom: 1.2rem; } label { display: block; margin-bottom: 0.5rem; font-weight: 600; } label span { color: red; } input, textarea { width: 100%; padding: 0.75rem; border: 1px solid
+#ccc; border-radius: 4px; font-size: 1rem; } button { display: inline-block; background-color: #007bff; color: #fff; padding: 0.75rem 1.5rem; border: none; border-radius: 4px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background
+0.3s; } button:hover { background-color: #0056b3; } .error { color: red; font-size: 0.85rem; margin-top: 0.3rem; display: block; } .success { color: green; font-size: 1rem; text-align: center; margin-top: 1rem; } /* Responsive */ @media (max-width: 600px)
+{ .container { padding: 1.5rem; } } document.getElementById("contactForm").addEventListener("submit", function (e) { e.preventDefault(); // Clear previous errors and success document.getElementById("nameError").textContent = ""; document.getElementById("emailError").textContent
+= ""; document.getElementById("messageError").textContent = ""; document.getElementById("successMessage").textContent = ""; const fullName = document.getElementById("fullName").value.trim(); const email = document.getElementById("email").value.trim();
+const message = document.getElementById("message").value.trim(); let isValid = true; // Name validation if (fullName === "") { document.getElementById("nameError").textContent = "Full Name is required."; isValid = false; } // Email validation const emailRegex
+= /^[^\s@]+@[^\s@]+\.[^\s@]+$/; if (email === "") { document.getElementById("emailError").textContent = "Email is required."; isValid = false; } else if (!emailRegex.test(email)) { document.getElementById("emailError").textContent = "Enter a valid email.";
+isValid = false; } // Message validation if (message === "") { document.getElementById("messageError").textContent = "Message is required."; isValid = false; } // Show success if all fields are valid if (isValid) { document.getElementById("successMessage").textContent
+= "Thank you for contacting us!"; document.getElementById("contactForm").reset(); } });
