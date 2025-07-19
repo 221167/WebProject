@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Picture</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        .profile-card {
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px auto;
+        }
+        
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 24px;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="profile-card">
+        <h1>Profile Pic</h1>
+        <img src="c:\Users\Bilal Computer\AppData\Local\Packages\5319275A.51895FA4EA97F_cv1g1gvanyjgm\TempState\1700002963A49DA13542E0726B7BB758\WhatsApp Image 2025-07-10 at 01.56.00_5e8d53ea.jpg" alt="Profile Picture" class="profile-pic">
+        <h2>Saeedullah Shahani</h2>
+        <p class="title">Front-End Developer</p>
+        <p class="bio">
+            I build wonderful websites and web Developer. Always Studyng and Investigating new technologies.
+        </p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+</body>
+
+</html>
