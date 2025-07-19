@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Remote Internship</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Welcome to the Remote Internship Portal</h1>
+    <p>This portal is your gateway to learning, growing, and thriving in a digital workspace. We offer internship programs tailored for remote collaboration and skill development.</p>
+  </main>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Remote Internship</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>About Our Internship Program</h1>
+    <p>Remote internships allow students and early professionals to gain real-world experience from anywhere in the world. With flexible hours, self-paced learning, and virtual mentorship, participants develop in-demand skills relevant to today’s job market.</p>
+
+    <p>Our internship programs are designed to provide hands-on project experience, regular feedback, and an inclusive team environment — all from the comfort of your home. Whether you're in tech, design, or business, our remote internships prepare you for the global workforce.</p>
+
+    <img src="https://source.unsplash.com/featured/?remote,work" alt="Remote Work" class="about-image" />
+
+    <button id="scrollTopBtn" title="Scroll to Top">↑</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Remote Internship</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Contact Us</h1>
+    <form id="contactForm">
+      <label>Name:<br /><input type="text" id="name" /></label><br />
+      <label>Email:<br /><input type="email" id="email" /></label><br />
+      <label>Message:<br /><textarea id="message"></textarea></label><br />
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 20px;
+  line-height: 1.6;
+}
+
+nav {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  margin-top: 20px;
+}
+
+form {
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+button {
+  padding: 10px 20px;
+  background: #0066cc;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #004a99;
+}
+
+.about-image {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+  display: block;
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  display: none;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !message) {
+        alert("Please fill in all fields.");
+        e.preventDefault();
+      }
+    });
+  }
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+  if (scrollTopBtn) {
+    window.onscroll = () => {
+      scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    };
+
+    scrollTopBtn.onclick = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+  }
+});
