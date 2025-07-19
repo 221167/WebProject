@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Remote Internship Landing Page</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">High Tech Software House</div>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <h1>Start Your Remote Internship Journey</h1>
+    <p>Learn & earn with flexible, skill-building internships.</p>
+    <a href="#contact" class="btn">Apply Now</a>
+  </section>
+
+  <!-- Benefits Section -->
+  <section id="benefits" class="benefits">
+    <h2>Why Choose Our Remote Internships?</h2>
+    <div class="benefit-cards">
+      <div class="card">
+        <i class="fas fa-clock"></i>
+        <h3>Flexible Timings</h3>
+      </div>
+      <div class="card">
+        <i class="fas fa-project-diagram"></i>
+        <h3>Real Project Experience</h3>
+      </div>
+      <div class="card">
+        <i class="fas fa-certificate"></i>
+        <h3>Certificate on Completion</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Get in Touch</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" />
+      <span class="error" id="nameError"></span>
+
+      <input type="email" id="email" placeholder="Your Email" />
+      <span class="error" id="emailError"></span>
+
+      <textarea id="message" placeholder="Your Message"></textarea>
+      <span class="error" id="messageError"></span>
+
+      <button type="submit">Submit</button>
+      <p class="success" id="successMessage"></p>
+    </form>
+  </section>
+
+  <!-- Scroll-to-Top Button -->
+  <button id="scrollTopBtn" title="Go to top"><i class="fas fa-chevron-up"></i></button>
+
+  <script src="script.js"></script>
+</body>
+</html>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+header {
+  background-color: #111;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00c2ff;
+}
+
+.hero {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(to right, #00c2ff, #0077ff);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero .btn {
+  padding: 0.8rem 1.5rem;
+  background-color: white;
+  color: #0077ff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.hero .btn:hover {
+  background-color: #e2e2e2;
+}
+
+.benefits {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #fff;
+}
+
+.benefits h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.benefit-cards {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: #f0f0f0;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card i {
+  font-size: 2rem;
+  color: #0077ff;
+  margin-bottom: 1rem;
+}
+
+.contact {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+form input,
+form textarea {
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+form button {
+  padding: 0.8rem;
+  background-color: #0077ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #005ecb;
+}
+
+.error {
+  color: red;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.success {
+  color: green;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  background-color: #0077ff;
+  color: white;
+  border: none;
+  padding: 0.8rem 1rem;
+  border-radius: 50%;
+  display: none;
+  cursor: pointer;
+}
+
+#scrollTopBtn:hover {
+  background-color: #005ecb;
+}
+
+@media (max-width: 768px) {
+  .benefit-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+const form = document.getElementById('contactForm');
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById('name');
+  const email = document.getElementById('email');
+  const message = document.getElementById('message');
+
+  let isValid = true;
+  document.getElementById('nameError').textContent = '';
+  document.getElementById('emailError').textContent = '';
+  document.getElementById('messageError').textContent = '';
+  document.getElementById('successMessage').textContent = '';
+
+  if (name.value.trim() === '') {
+    document.getElementById('nameError').textContent = 'Name is required';
+    isValid = false;
+  }
+
+  if (email.value.trim() === '') {
+    document.getElementById('emailError').textContent = 'Email is required';
+    isValid = false;
+  } else if (!/^\S+@\S+\.\S+$/.test(email.value.trim())) {
+    document.getElementById('emailError').textContent = 'Invalid email format';
+    isValid = false;
+  }
+
+  if (message.value.trim() === '') {
+    document.getElementById('messageError').textContent = 'Message is required';
+    isValid = false;
+  }
+
+  if (isValid) {
+    document.getElementById('successMessage').textContent = 'Thank you for contacting us!';
+    form.reset();
+  }
+});
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+window.onscroll = function () {
+  scrollTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+};
+
+scrollTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
