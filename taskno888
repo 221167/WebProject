@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>High Tech Digital Solutions</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1>High Tech Digital Solutions</h1>
+      <nav>
+        <a href="#hero">Home</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="container">
+      <h2>Our Services. Your Success.</h2>
+      <p>We deliver tailored digital solutions to boost your business.</p>
+      <a href="#services" class="btn">Explore Services</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <div class="container">
+      <h2>What We Offer</h2>
+      <div class="services-grid">
+        <!-- Example Service Card -->
+        <div class="service-card">
+          <i class="fas fa-code"></i>
+          <h3>Web Development</h3>
+          <p>Responsive and modern websites to grow your business online.</p>
+          <a href="#" class="btn">Learn More</a>
+        </div>
+
+        <div class="service-card">
+          <i class="fas fa-pencil-ruler"></i>
+          <h3>UI/UX Design</h3>
+          <p>Intuitive interfaces for better user experiences and conversions.</p>
+          <a href="#" class="btn">Learn More</a>
+        </div>
+
+        <div class="service-card">
+          <i class="fas fa-search"></i>
+          <h3>SEO Optimization</h3>
+          <p>Get found on search engines with proven SEO techniques.</p>
+          <a href="#" class="btn">Learn More</a>
+        </div>
+
+        <div class="service-card">
+          <i class="fas fa-mobile-alt"></i>
+          <h3>App Development</h3>
+          <p>Build robust mobile applications tailored to your needs.</p>
+          <a href="#" class="btn">Learn More</a>
+        </div>
+
+        <div class="service-card">
+          <i class="fas fa-bullhorn"></i>
+          <h3>Branding</h3>
+          <p>Craft unique brand identities that connect with your audience.</p>
+          <a href="#" class="btn">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2>Let’s Work Together</h2>
+      <form id="contact-form">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Submit</button>
+        <p id="thank-you" class="hidden">Thanks for reaching out! We’ll get back to you soon.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Scroll to Top -->
+  <button id="scrollTopBtn" title="Go to top">↑</button>
+
+</body>
+</html>
+/* Google Fonts and Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+}
+
+header {
+  background: #1a1a2e;
+  color: white;
+  padding: 1rem 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#hero {
+  background: #f0f4f8;
+  text-align: center;
+  padding: 5rem 1rem;
+}
+
+#hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  background: #007bff;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #0056b3;
+}
+
+#services {
+  padding: 4rem 1rem;
+  background: #ffffff;
+  text-align: center;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #007bff;
+}
+
+#contact {
+  padding: 4rem 1rem;
+  background: #f0f0f0;
+  text-align: center;
+}
+
+form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+form input,
+form textarea {
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.hidden {
+  display: none;
+  color: green;
+  margin-top: 1rem;
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  display: none;
+  cursor: pointer;
+}
+
+#scrollTopBtn:hover {
+  background: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+// Form validation
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('name');
+  const email = document.getElementById('email');
+  const message = document.getElementById('message');
+  const thankYou = document.getElementById('thank-you');
+
+  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+  if (!name.value || !email.value || !message.value) {
+    alert('Please fill in all fields.');
+    return;
+  }
+
+  if (!email.value.match(emailPattern)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  thankYou.classList.remove('hidden');
+  this.reset();
+});
+
+// Scroll to top button
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollBtn.style.display = "block";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+});
+
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
