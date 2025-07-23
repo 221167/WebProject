@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compare Internship Plans</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="page-header">
+    <h1>Compare Internship Plans</h1>
+    <p>Choose the plan that’s right for you</p>
+  </header>
+
+  <section class="comparison-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Features</th>
+          <th>Basic</th>
+          <th class="highlighted">Standard <span class="badge">Most Popular</span></th>
+          <th>Premium</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Access to Live Projects</td>
+          <td>❌</td>
+          <td class="highlighted">✅</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>1-on-1 Mentorship</td>
+          <td>❌</td>
+          <td class="highlighted">✅</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>Certificate of Completion</td>
+          <td>✅</td>
+          <td class="highlighted">✅</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>Resume Review</td>
+          <td>❌</td>
+          <td class="highlighted">✅</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>Job Referral Support</td>
+          <td>❌</td>
+          <td class="highlighted">❌</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>Flexible Timing</td>
+          <td>✅</td>
+          <td class="highlighted">✅</td>
+          <td>✅</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="cta">
+    <p>Ready to start your internship journey?</p>
+    <a href="#" class="cta-btn">Apply Now</a>
+  </section>
+
+</body>
+</html>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page-header h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.page-header p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.comparison-table {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+  background-color: #f0f0f5;
+}
+
+th, td {
+  padding: 16px;
+  text-align: center;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+th {
+  font-weight: 600;
+}
+
+td:first-child, th:first-child {
+  text-align: left;
+  font-weight: 500;
+}
+
+.badge {
+  background-color: #ff8c00;
+  color: white;
+  font-size: 0.7rem;
+  padding: 4px 8px;
+  border-radius: 20px;
+  margin-left: 5px;
+}
+
+.highlighted {
+  background-color: #fff7e6;
+}
+
+td {
+  font-size: 1.1rem;
+}
+
+td:contains('✅') {
+  color: green;
+}
+
+td:contains('❌') {
+  color: red;
+}
+
+table tr:hover td {
+  background-color: #f9f9f9;
+}
+
+.cta {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.cta p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.cta-btn {
+  background-color: #0077ff;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover {
+  background-color: #005ce6;
+}
+
+@media (max-width: 768px) {
+  table {
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 12px;
+  }
+
+  .page-header h1 {
+    font-size: 1.6rem;
+  }
+}
