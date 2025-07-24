@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Internship Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Internship Gallery</h1>
+    <p>A look into what we’ve built</p>
+  </header>
+
+  <section class="gallery">
+    <!-- Add 8 images -->
+    <div class="gallery-item"><img src="https://images.app.goo.gl/Piftw1isVt7dW4GU7" alt="Image.1"></div>
+    <div class="gallery-item"><img src="https://images.app.goo.gl/XkwszunfuViwSyEY6" alt="Image.2"></div>
+    <div class="gallery-item"><img src="https://images.app.goo.gl/6V245SvnPmwvZ1yp6" alt="Image.3"></div>
+    <div class="gallery-item"><img src="https://images.app.goo.gl/d7LZN9TvLnRpnvHb7" alt="Image.4"></div>
+    <div class="gallery-item"><img src="https://images.app.goo.gl/f92UZoyrGL7t3HH7A" alt="Image.5"></div>
+    <div class="gallery-item"><img src="https://images.app.goo.gl/VqHXYbr72QUVE6qy9" alt="Image.6"></div>
+    <div class="gallery-item"><img src="https://images.app.goo.gl/H1411vaRS3iuk6jX6" alt="Image.7"></div>
+    <div class="gallery-item"><img src="https://images.app.goo.gl/F8RFna929pYNbDpe7" alt="Image.8"></div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" src="" alt="Full Size Image">
+    <div class="caption"></div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  transform: scale(1.03);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+
+.lightbox.active {
+  display: flex;
+  animation: fadeIn 0.3s ease;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 70vh;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.caption {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: none;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.prev { left: 30px; }
+.next { right: 30px; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .lightbox-img {
+    max-height: 60vh;
+  }
+
+  .prev, .next {
+    font-size: 1.5rem;
+  }
+}
+const images = document.querySelectorAll('.gallery-item img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.querySelector('.lightbox-img');
+const caption = document.querySelector('.caption');
+const closeBtn = document.querySelector('.close');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+
+let currentIndex = 0;
+
+images.forEach((img, index) => {
+  img.addEventListener('click', () => {
+    currentIndex = index;
+    showLightbox();
+  });
+});
+
+function showLightbox() {
+  const src = images[currentIndex].src;
+  const alt = images[currentIndex].alt;
+  lightboxImg.src = src;
+  caption.textContent = ${alt} (${currentIndex + 1} of ${images.length});
+  lightbox.classList.add('active');
+}
+
+closeBtn.addEventListener('click', () => {
+  lightbox.classList.remove('active');
+});
+
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  showLightbox();
+});
+
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  showLightbox();
+});
+
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) {
+    lightbox.classList.remove('active');
+  }
+});
+document.addEventListener('keydown', (e) => {
+  if (!lightbox.classList.contains('active')) return;
+  if (e.key === 'ArrowRight') nextBtn.click();
+  else if (e.key === 'ArrowLeft') prevBtn.click();
+  else if (e.key === 'Escape') lightbox.classList.remove('active');
+});
