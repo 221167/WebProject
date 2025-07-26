@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meet Our Team</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="header">
+    <h1>Meet Our Team</h1>
+    <p class="subtitle">The people behind our mission</p>
+  </header>
+
+  <main class="team-container">
+    <!-- Team Member Card -->
+    <div class="team-card">
+      <img src="https://images.app.goo.gl/sNLXUxNpgi6YVzQGA" alt="Member 1">
+      <h3>Salman Khan</h3>
+      <p class="role">UI/UX Designer</p>
+      <p class="desc">“Design is thinking made visual.”</p>
+      <div class="socials">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <img src="https://images.app.goo.gl/M9ayuRaErY2UoZex8" alt="Member 2">
+      <h3>Shahrukh Khan</h3>
+      <p class="role">Frontend Developer</p>
+      <p class="desc">Passionate about creating engaging UIs.</p>
+      <div class="socials">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <img src="https://images.app.goo.gl/Vp8hPCTA8w9LtCBB7" alt="Member 3">
+      <h3>Aamir Khan</h3>
+      <p class="role">Backend Developer</p>
+      <p class="desc">“Code is like humor. When you have to explain it, it’s bad.”</p>
+      <div class="socials">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <img src="https://images.app.goo.gl/fkUnrAGcHiR1JNx36" alt="Member 4">
+      <h3>Sanjay Dutt</h3>
+      <p class="role">Project Manager</p>
+      <p class="desc">Turning ideas into executed plans.</p>
+      <div class="socials">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </main>
+
+  <button id="scrollToTop" title="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
+/* Google Font & Base Reset */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f7fa;
+  color: #333;
+}
+
+/* Header Section */
+.header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Team Container */
+.team-container {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Team Card */
+.team-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.team-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.team-card h3 {
+  margin: 0.5rem 0 0.2rem;
+}
+
+.role {
+  color: #0099cc;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.desc {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Social Icons */
+.socials {
+  margin-top: 1rem;
+}
+
+.socials a {
+  margin: 0 0.5rem;
+  color: #333;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.socials a:hover {
+  color: #0077b5; /* LinkedIn blue */
+}
+
+/* Scroll To Top Button */
+#scrollToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #0099cc;
+  color: white;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background 0.3s;
+}
+
+#scrollToTop:hover {
+  background: #0077a3;
+{
+const scrollBtn = document.getElementById("scrollToTop");
+
+window.onscroll = function () {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    scrollBtn.style.display = "block";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+};
+
+scrollBtn.addEventListener("click", function () {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
