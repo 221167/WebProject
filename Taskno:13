@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | Internship</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header">
+    <h1>Frequently Asked Questions</h1>
+    <p class="subtitle">Answers to the most common queries from our interns</p>
+  </header>
+
+  <main class="accordion-container">
+    <div class="accordion-item">
+      <button class="accordion-question">
+        How long is the internship?
+        <span class="icon">⮟</span>
+      </button>
+      <div class="accordion-answer">
+        The internship typically lasts for 4–6 weeks depending on your performance.
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-question">
+        Is the internship paid?
+        <span class="icon">⮟</span>
+      </button>
+      <div class="accordion-answer">
+        Currently, our internship is unpaid but offers certification and hands-on project experience.
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-question">
+        What skills are required?
+        <span class="icon">⮟</span>
+      </button>
+      <div class="accordion-answer">
+        Basic knowledge of HTML, CSS, and JavaScript is expected. Familiarity with Git is a plus.
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-question">
+        Can I work part-time?
+        <span class="icon">⮟</span>
+      </button>
+      <div class="accordion-answer">
+        Yes, the internship is fully remote and flexible, allowing part-time contribution.
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-question">
+        Will I receive a certificate?
+        <span class="icon">⮟</span>
+      </button>
+      <div class="accordion-answer">
+        Yes, interns who complete the program will receive a digital certificate of completion.
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-question">
+        What projects will I work on?
+        <span class="icon">⮟</span>
+      </button>
+      <div class="accordion-answer">
+        You’ll work on real-world web development projects like landing pages, portfolios, and mini apps.
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+/* General Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7fa;
+  color: #333;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #666;
+}
+
+/* Accordion Container */
+.accordion-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Accordion Items */
+.accordion-item {
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.accordion-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.accordion-question:hover {
+  background: #f0f4f8;
+}
+
+.icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+
+/* Active Icon */
+.accordion-question.active .icon {
+  transform: rotate(180deg);
+}
+
+/* Accordion Answer */
+.accordion-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
+  color: #444;
+  background: #fafafa;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.accordion-answer.open {
+  padding: 1rem 1.5rem;
+}
+const questions = document.querySelectorAll('.accordion-question');
+
+questions.forEach(question => {
+  question.addEventListener('click', () => {
+    const currentlyActive = document.querySelector('.accordion-question.active');
+    if (currentlyActive && currentlyActive !== question) {
+      currentlyActive.classList.remove('active');
+      currentlyActive.nextElementSibling.classList.remove('open');
+      currentlyActive.nextElementSibling.style.maxHeight = null;
+    }
+
+    question.classList.toggle('active');
+    const answer = question.nextElementSibling;
+    if (question.classList.contains('active')) {
+      answer.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    } else {
+      answer.classList.remove('open');
+      answer.style.maxHeight = null;
+    }
+  });
+});
