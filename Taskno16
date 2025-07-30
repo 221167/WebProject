@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Internship Timeline</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="header">
+    <h1>Internship Timeline</h1>
+    <p>See how your journey will unfold</p>
+  </header>
+
+  <section class="timeline">
+    <!-- Timeline Item 1 -->
+    <div class="timeline-item">
+      <div class="timeline-icon">1</div>
+      <div class="timeline-content">
+        <h2>Application Submitted</h2>
+        <p>Your application has been received and is under review.</p>
+        <span class="timeline-date">July 1, 2025</span>
+      </div>
+    </div>
+
+    <!-- Timeline Item 2 -->
+    <div class="timeline-item">
+      <div class="timeline-icon">2</div>
+      <div class="timeline-content">
+        <h2>Orientation & Onboarding</h2>
+        <p>Get familiar with the team, tools, and expectations.</p>
+        <span class="timeline-date">July 5–7, 2025</span>
+      </div>
+    </div>
+
+    <!-- Timeline Item 3 -->
+    <div class="timeline-item">
+      <div class="timeline-icon">3</div>
+      <div class="timeline-content">
+        <h2>Skill-Building Tasks</h2>
+        <p>Work on guided tasks to sharpen your skills.</p>
+        <span class="timeline-date">July 8–15, 2025</span>
+      </div>
+    </div>
+
+    <!-- Timeline Item 4 -->
+    <div class="timeline-item">
+      <div class="timeline-icon">4</div>
+      <div class="timeline-content">
+        <h2>Real-World Projects</h2>
+        <p>Apply your skills to live, real-world projects.</p>
+        <span class="timeline-date">July 16–28, 2025</span>
+      </div>
+    </div>
+
+    <!-- Timeline Item 5 -->
+    <div class="timeline-item">
+      <div class="timeline-icon">5</div>
+      <div class="timeline-content">
+        <h2>Final Evaluation</h2>
+        <p>Receive feedback and performance analysis.</p>
+        <span class="timeline-date">July 29, 2025</span>
+      </div>
+    </div>
+
+    <!-- Timeline Item 6 -->
+    <div class="timeline-item">
+      <div class="timeline-icon"><i class="fas fa-certificate"></i></div>
+      <div class="timeline-content">
+        <h2>Certificate Issued</h2>
+        <p>Celebrate your achievement and download your certificate.</p>
+        <span class="timeline-date">July 30, 2025</span>
+      </div>
+    </div>
+  </section>
+
+  <button id="scrollTopBtn">↑</button>
+</body>
+</html>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f4f7fa;
+  color: #333;
+  line-height: 1.5;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+}
+
+.header p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: 8px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 900px;
+  margin: auto;
+  position: relative;
+}
+
+.timeline-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 20px 25px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-in-out;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #007bff;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.timeline-content h2 {
+  margin-bottom: 6px;
+  font-size: 1.2rem;
+  color: #007bff;
+}
+
+.timeline-date {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 5px;
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #007bff;
+  color: white;
+  padding: 10px 14px;
+  font-size: 18px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .timeline {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .timeline-item {
+    flex: 0 0 48%;
+  }
+}const items = document.querySelectorAll('.timeline-item');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+items.forEach(item => observer.observe(item));
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+window.onscroll = function () {
+  scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+};
+
+scrollBtn.onclick = function () {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
