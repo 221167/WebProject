@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meet the Team</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="header">
+    <h1>Meet the Team</h1>
+    <p>The people behind our success</p>
+    <div class="filter-buttons">
+      <button data-role="all">All</button>
+      <button data-role="Developer">Developer</button>
+      <button data-role="Designer">Designer</button>
+    </div>
+  </header>
+
+  <main class="team-container">
+    <!-- Sample Card -->
+    <div class="team-card" data-role="Developer">
+      <img src="https://images.app.goo.gl/AqkjLoeaca6o14hu9" alt="Profile" />
+      <h2>Jane Doe</h2>
+      <p class="role">Web Developer</p>
+      <p class="bio">Passionate about clean code and user experiences.</p>
+      <div class="socials">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+
+    <!-- Duplicate and change info for more members -->
+    <div class="team-card" data-role="Designer">
+      <img src="https://images.app.goo.gl/pNuUniVepMDfun9m9" alt="Profile" />
+      <h2>John Smith</h2>
+      <p class="role">UI/UX Designer</p>
+      <p class="bio">Designing delightful interfaces with empathy.</p>
+      <div class="socials">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+
+    <!-- Add 4-6 more cards similarly -->
+    
+  </main>
+
+  <button id="scrollTopBtn">↑</button>
+
+</body>
+</html>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+}
+
+.header p {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 10px 0;
+}
+
+.filter-buttons {
+  margin-top: 15px;
+}
+
+.filter-buttons button {
+  margin: 0 8px;
+  padding: 8px 16px;
+  border: none;
+  background: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.filter-buttons button:hover {
+  background: #0056b3;
+}
+
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.team-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.team-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s ease-in-out;
+}
+
+.team-card img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.team-card:hover img {
+  transform: scale(1.05);
+}
+
+.team-card h2 {
+  margin-top: 15px;
+  font-size: 1.3rem;
+}
+
+.team-card .role {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.bio {
+  margin: 10px 0;
+  color: #555;
+}
+
+.socials a {
+  margin: 0 5px;
+  color: #555;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.socials a:hover {
+  color: #007bff;
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 50%;
+  background: #007bff;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+const cards = document.querySelectorAll(".team-card");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.1 });
+
+cards.forEach(card => observer.observe(card));
+const buttons = document.querySelectorAll(".filter-buttons button");
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    const role = button.getAttribute("data-role");
+
+    cards.forEach(card => {
+      card.style.display =
+        role === "all" || card.getAttribute("data-role") === role
+          ? "block"
+          : "none";
+    });
+  });
+});
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+window.onscroll = function () {
+  scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+};
+
+scrollBtn.onclick = function () {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
