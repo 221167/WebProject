@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coming Soon</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <main class="container fade-in">
+    <h1 class="brand">🚀 LaunchX</h1>
+    <p class="tagline">Something awesome is coming soon!</p>
+
+    <!-- Countdown -->
+    <div id="countdown" class="countdown">
+      <div><span id="days">07</span><small>Days</small></div>
+      <div><span id="hours">03</span><small>Hours</small></div>
+      <div><span id="minutes">30</span><small>Minutes</small></div>
+      <div><span id="seconds">45</span><small>Seconds</small></div>
+    </div>
+
+    <!-- Email Signup -->
+    <form id="subscribeForm" class="subscribe">
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit">Notify Me</button>
+    </form>
+
+    <!-- Social Icons -->
+    <div class="socials">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" /></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" /></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" /></a>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+/* Reset & Base */
+* {
+  margin: 10;
+  padding: 150;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  text-align: center;
+}
+
+/* Container */
+.container {
+  max-width: 600px;
+  width: 100%;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Brand & Tagline */
+.brand {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.tagline {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+
+/* Countdown */
+.countdown {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.countdown div {
+  flex: 1;
+}
+
+.countdown span {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.countdown small {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+/* Subscribe Form */
+.subscribe {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.subscribe input {
+  padding: 15px;
+  border-radius: 8px;
+  border: none;
+  flex: 1;
+  min-width: 300px;
+}
+
+.subscribe button {
+  padding: 15px 25px;
+  border-radius: 8px;
+  border: none;
+  background: #ff6b6b;
+  color: white;
+  cursor: pointer;
+  transition: background 0.5s ease;
+}
+
+.subscribe button:hover {
+  background: #ee5253;
+}
+
+/* Social Icons */
+.socials a {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.socials img {
+  width: 40px;
+  height: 40px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.5s ease;
+}
+
+.socials img:hover {
+  transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .countdown {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+const launchDate = new Date("December 31, 2025 23:59:59").getTime();
+
+const timer = setInterval(() => {
+  const now = new Date().getTime();
+  const timeLeft = launchDate - now;
+
+  if (timeLeft <= 0) {
+    clearInterval(timer);
+    document.getElementById("countdown").innerHTML = "We’re Live!";
+    return;
+  }
+
+  const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
+  const seconds = Math.floor((timeLeft / 1000) % 60);
+
+  document.getElementById("days").innerText = days.toString().padStart(2, '0');
+  document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+  document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+  document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+}, 1000);
+
+// Email Subscription
+document.getElementById("subscribeForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const email = this.querySelector("input").value;
+  alert(`Thank you! We'll notify you at ${email}`);
+  this.reset();
+});
