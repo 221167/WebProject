@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intern Testimonials</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header">
+    <h1>What Our Interns Say</h1>
+    <p class="subtitle">Real feedback from real experiences</p>
+  </header>
+
+  <section class="testimonials-container">
+    <!-- Testimonial Card Example -->
+    <div class="testimonial-card">
+      <img src="c:\Users\Bilal Computer\Documents\photo.jpg" alt="Intern Photo" class="profile-pic">
+      <h3>Saeedullah Shahani</h3>
+      <p class="role">Web Development Intern</p>
+      <p class="quote">“This internship gave me real-world experience and confidence in my skills.”</p>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+    </div>
+
+    <div class="testimonial-card">
+      <img src="https://images.app.goo.gl/jRmJe61HA9BV18TH7" alt="Intern Photo" class="profile-pic">
+      <h3>Ducky Bhai</h3>
+      <p class="role">Frontend Intern</p>
+      <p class="quote">“I loved the team culture and learned a lot about UI/UX.”</p>
+      <div class="stars">⭐⭐⭐⭐</div>
+    </div>
+
+    <!-- Add 2–4 more cards -->
+  </section>
+
+  <!-- Optional Scroll-to-Top Button -->
+  <button id="scrollToTopBtn">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
+/* Reset & Fonts */
+* {
+  margin: 10;
+  padding: 5;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f9f9f9;
+  padding: 20px;
+}
+
+/* Header Section */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #555;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Testimonials Grid */
+.testimonials-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.profile-pic {
+  border-radius: 50%;
+  width: 70px;
+  height: 30px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.testimonial-card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.role {
+  color: #555;
+  font-size: 1.95rem;
+  margin-bottom: 15px;
+}
+
+.quote {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.stars {
+  color: gold;
+  font-size: 1rem;
+}
+
+/* Scroll-to-Top Button */
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 25px;
+  right: 40px;
+  padding: 15px 16px;
+  font-size: 20px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 60%;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+}
+
+#scrollToTopBtn:hover {
+  background-color: #555;
+}
+const scrollBtn = document.getElementById("scrollToTopBtn");
+
+window.onscroll = function () {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    scrollBtn.style.display = "block";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+};
+
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
