@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahzaib | Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Hi, I'm Saeedullah – Web Developer Intern</h1>
+        <p>Passionate about creating responsive, modern, and user-friendly websites.</p>
+        <a href="c:\Users\Bilal Computer\Desktop\Dextop Data\cv.rtf" class="btn" download>Download CV</a>
+        <br>
+        <img src="https://images.app.goo.gl/BbBtEuaor5sUgfRV8" alt="Hero Image">
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Saeedullah. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Saeedullah</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="about">
+        <h2>About Me</h2>
+        <img src="https://images.app.goo.gl/BbBtEuaor5sUgfRV8" alt="Profile">
+        <p>Hello! I’m Saeedullah, a passionate web developer with a love for building interactive and responsive websites.</p>
+        <p>I specialize in HTML, CSS, and JavaScript, and I’m constantly learning new technologies to improve my craft.</p>
+        <p>My goal is to create websites that are not only functional but also visually appealing.</p>
+
+        <div class="skills">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Saeedullah. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Saeedullah</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="projects">
+        <div class="project-card">
+            <img src="https://images.app.goo.gl/7M1UcS658ZPSvACT9" alt="Project 1">
+            <h3>Project One</h3>
+            <p>This project one  is very effective and through that I gain hands-on experience.</p>
+            <a href="#" class="btn">View</a>
+        </div>
+
+        <div class="project-card">
+            <img src="https://images.app.goo.gl/wp9BtYkw1uGEiPr5A" alt="Project 2">
+            <h3>Project Two</h3>
+            <p>This project two is very important and supportive.</p>
+            <a href="#" class="btn">View</a>
+        </div>
+
+        <div class="project-card">
+            <img src="https://images.app.goo.gl/jiKCDRqn9XMmTU1n7." alt="Project 3">
+            <h3>Project Three</h3>
+            <p>This project three is a supportive and gain hand-on experienced project.</p>
+            <a href="#" class="btn">View</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Saeedullah. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Shahzaib</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="contact-form">
+        <h2>Get in Touch</h2>
+        <form id="contactForm">
+            <input type="text" id="name" Saeedullah="Your Name">
+            <input type="email" id="email" saeedullah786110@gmail.com="Your Email">
+            <textarea id="message" rows="5" This is very good internship for me,and its team is very supportive.This high tech plate form is very beneficant for students to gaining knowledge and more about web development="Your Message"></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Saeedullah. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+/* ===== Google Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* ===== Global Styles ===== */
+* {
+    margin: 10;
+    padding: 10;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* ===== Navbar ===== */
+nav {
+    background: #222;
+    color: #fff;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff9800;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+.hero img {
+    max-width: 250px;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #e68900;
+}
+
+/* ===== About Page ===== */
+.about {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.about img {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* ===== Skills ===== */
+.skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.skill {
+    margin: 10px;
+    padding: 10px 15px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ===== Projects ===== */
+.projects {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+/* ===== Contact ===== */
+.contact-form {
+    max-width: 500px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.contact-form button {
+    width: 100%;
+}
+
+/* ===== Footer ===== */
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+}
+// Form validation for Contact Page
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("#contactForm");
+
+    if (form) {
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let name = document.querySelector("#name").value.trim();
+            let email = document.querySelector("#email").value.trim();
+            let message = document.querySelector("#message").value.trim();
+
+            if (name === "" || email === "" || message === "") {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!email.match(emailPattern)) {
+                alert("Please enter a valid email.");
+                return;
+            }
+
+            alert("Message sent successfully!");
+            form.reset();
+        });
+    }
+});
